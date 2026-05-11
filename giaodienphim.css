@@ -1,0 +1,115 @@
+﻿/* RESET - Xóa bỏ các khoảng cách mặc định để giao diện chuẩn xác */
+* {
+    margin: 0; /* Xóa khoảng cách ngoài */
+    padding: 0; /* Xóa khoảng cách trong */
+    box-sizing: border-box; /* Đảm bảo kích thước khung không bị tràn */
+}
+
+/* BODY - Cấu hình chung cho toàn bộ trang */
+body {
+    background: #0f172a; /* Màu nền xanh đen đậm */
+    color: white; /* Màu chữ mặc định là trắng */
+    font-family: sans-serif; /* Sử dụng font chữ cơ bản, dễ đọc */
+    line-height: 1.5; /* Khoảng cách giữa các dòng chữ */
+}
+
+/* HEADER - Thanh menu điều hướng phía trên cùng */
+header {
+    background: #020617; /* Nền đen cho menu */
+    padding: 15px 5%; /* Cách trên dưới 15px, lùi lề 5% */
+    display: flex; /* Dàn hàng ngang các phần tử */
+    justify-content: space-between; /* Logo bên trái, Menu bên phải */
+    align-items: center; /* Căn Logo và Menu thẳng hàng nhau */
+}
+
+.logo {
+    font-size: 24px; /* Cỡ chữ Logo */
+    color: #22c55e; /* Màu xanh lá cho Logo */
+    font-weight: bold; /* Làm đậm chữ Logo */
+}
+
+nav a {
+    color: white; /* Màu chữ các mục menu */
+    text-decoration: none; /* Bỏ gạch chân chữ */
+    margin-left: 20px; /* Khoảng cách giữa các mục menu */
+}
+
+/* BANNER - Vùng hiển thị tên phim và mô tả (Phần Bố Già) */
+.movie-banner {
+    height: 250px; /* Chiều cao của vùng Banner */
+    /* Tạo hiệu ứng tối dần phía dưới và chèn ảnh nền */
+    background: linear-gradient(to bottom, rgba(15,23,42,0.5), #0f172a), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba') center/cover;
+    display: flex; /* Dùng Flexbox để căn chỉnh nội dung */
+    align-items: center; /* Căn nội dung vào giữa theo chiều dọc */
+    padding: 0 5%; /* Cách lề trái 5% */
+}
+
+.overlay h1 {
+    font-size: 40px; /* Cỡ chữ tên phim (Bố Già) to nổi bật */
+    margin-bottom: 5px; /* Khoảng cách dưới tên phim */
+}
+
+.overlay p {
+    color: #cbd5e1; /* Màu xám nhạt cho đoạn mô tả */
+    max-width: 500px; /* Không để chữ tràn hết chiều ngang */
+}
+
+/* KHUNG CHỨA - Gom nội dung xem phim vào giữa */
+.watch-container {
+    padding: 20px 5%; /* Khoảng cách bên trong khung */
+}
+
+/* LAYOUT CHÍNH - Chia 2 cột cho Video và Thông tin */
+.main-movie {
+    display: flex; /* Chia Video bên trái, Poster bên phải */
+    gap: 30px; /* Khoảng cách giữa 2 cột */
+}
+
+/* VIDEO BOX - Phần khung trình chiếu video */
+.video-box {
+    flex: 2.5; /* Chiếm phần lớn diện tích (2.5 phần) */
+}
+
+    .video-box iframe {
+        width: 100%; /* Video rộng hết khung chứa */
+        aspect-ratio: 16 / 9; /* Giữ tỉ lệ chuẩn 16:9 không bị méo */
+        border-radius: 10px; /* Bo tròn nhẹ các góc video */
+        border: none; /* Xóa bỏ viền mặc định của iframe */
+    }
+
+/* THÔNG TIN CHI TIẾT - Cột bên phải chứa Poster */
+.movie-detail {
+    flex: 1; /* Chiếm phần nhỏ diện tích (1 phần) */
+    background: #1e293b; /* Màu nền khung thông tin */
+    padding: 15px; /* Khoảng cách chữ với viền khung */
+    border-radius: 10px; /* Bo tròn góc khung thông tin */
+}
+
+    .movie-detail img {
+        width: 100%; /* Poster rộng hết khung */
+        border-radius: 5px; /* Bo tròn nhẹ góc ảnh poster */
+        margin-bottom: 15px; /* Khoảng cách dưới ảnh poster */
+    }
+
+/* DANH SÁCH TẬP PHIM */
+.episode-box {
+    margin-top: 30px; /* Khoảng cách từ video xuống danh sách tập */
+}
+
+.episodes-list {
+    display: flex; /* Dàn hàng ngang các tập phim */
+    flex-wrap: wrap; /* Tự động xuống dòng khi hết chỗ trống */
+    gap: 10px; /* Khoảng cách giữa các nút tập */
+}
+
+    .episodes-list a {
+        background: #334155; /* Màu nền của nút tập phim */
+        color: white; /* Màu chữ tập phim */
+        text-decoration: none; /* Bỏ gạch chân nút bấm */
+        padding: 10px 15px; /* Độ lớn của nút tập phim */
+        border-radius: 5px; /* Bo tròn góc nút bấm */
+    }
+
+        .episodes-list a:hover {
+            background: #22c55e; /* Đổi màu xanh lá khi chạm chuột vào tập */
+        }
